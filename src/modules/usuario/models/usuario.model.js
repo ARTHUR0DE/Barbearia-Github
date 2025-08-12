@@ -46,9 +46,13 @@ const UsuarioModel = sequelize.define(
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-
+          msg: "O campo tipo de usuário deve ser preenchido!",
+    isIn: {
+      args: [['admin', 'cliente', 'funcionario']], // ajuste conforme os tipos permitidos
+      msg: "O tipo de usuário deve ser 'admin', 'cliente' ou 'funcionario'!"
         }
-    },
+    }
+  ,
 
     ativo: {
       type: DataTypes.BOOLEAN,
@@ -65,15 +69,20 @@ const UsuarioModel = sequelize.define(
       type: DataTypes.DATE,
       allowNull: true,
       validate: {
-
-      }
+        isDate: {
+          msg: "O campo 'último login' deve ser uma data válida!"
     }
+    }
+  }
+},
   },
+  
   {
     tableName: "usuario",
     createdAt: "criado_em",
     updatedAt: "atualizado_em"
   }
 );
+
 
 export default UsuarioModel;

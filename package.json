@@ -15,8 +15,8 @@
   "author": "Seu Nome",
   "type": "module",
   "license": "MIT",
-  "type": "module",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^16.0.3",
     "express": "^4.21.2"
   }
