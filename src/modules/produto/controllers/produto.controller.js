@@ -1,4 +1,4 @@
-import ProdutosModel from "../models/model.js";
+import ProdutosModel from '../models/produto.model.js';
 
 class ProdutosController {
   static async cadastrar(req, res) {
