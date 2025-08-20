@@ -11,7 +11,7 @@ const VendasModel = sequelize.define(
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
     },
-    client_id: {
+    cliente_id: {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
@@ -54,6 +54,23 @@ const VendasModel = sequelize.define(
           }
         },
       },
+    },
+    desconto: {
+      type: DataTypes.DECIMAL(3, 2),
+      allowNull: true,
+      defaultValue: 0.0,
+      validate: {
+        isDecimal: { msg: "O desconto deve ser decimal!" },
+        min: {
+          args: [0],
+          msg: "O desconto não pode ser negativo!",
+        },
+        max: {
+          args: [1],
+          msg: "O desconto deve ser no máximo 1 (100%)!",
+        },
+      },
+      comment: "Desconto percentual de 0 a 1 (ex: 0.15 para 15%)",
     },
     valor_total: {
       type: DataTypes.DECIMAL(10, 2),

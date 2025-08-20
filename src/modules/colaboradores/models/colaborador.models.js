@@ -1,3 +1,6 @@
+import { DataTypes } from 'sequelize'
+import sequelize from '../../../../config/database';
+
 const ColaboradorModel = sequelize.define(
   "Colaborador",
   {
@@ -73,3 +76,5 @@ const ColaboradorModel = sequelize.define(
     updatedAt: "atualizado_em"
   }
 );
+
+export default ColaboradorModel;

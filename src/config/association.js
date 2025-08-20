@@ -11,3 +11,31 @@ import VendasModel from "../modules/vendas/models/vendas.model.js";
 
 
 UsuarioModel.hasMany(RelatorioModel)
+// Relacionamentos de Venda
+VendasModel.belongsTo(ClienteModel, {
+  foreignKey: "client_id",
+  as: "cliente",
+});
+VendasModel.belongsTo(ColaboradorModel, {
+  foreignKey: "colaborador_id",
+  as: "colaborador",
+});
+VendasModel.belongsTo(Pagamento, {
+  foreignKey: "pagamento_id",
+  as: "pagamento",
+});
+ClienteModel.hasMany(VendasModel, {
+  foreignKey: "client_id",
+  as: "vendas",
+});
+ColaboradorModel.hasMany(VendasModel, {
+  foreignKey: "colaborador_id",
+  as: "vendas",
+});
+Pagamento.hasMany(VendasModel, {
+  foreignKey: "pagamento_id",
+  as: "vendas",
+});
+UsuarioModel.hasMany(RelatorioModel, {
+})
+

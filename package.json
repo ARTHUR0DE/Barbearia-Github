@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "O sistema está organizado em 10 módulos/domínios principais, cada um representando um aspecto do negócio de barbearia. Utilizaremos o padrão MVC (Model-View-Controller) para garantir separação de responsabilidades e escalabilidade.",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },
@@ -17,14 +18,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/vlimap/2024.11.161-UC5-github/issues"
   },
   "dependencies": {
-    "dotenv": "^17.2.1",
+
     "express": "^5.1.0",
-    "pg": "^8.16.3",
     "sequelize": "^6.37.7"
   }
 }

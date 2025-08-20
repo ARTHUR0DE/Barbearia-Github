@@ -19,9 +19,10 @@ const ProdutosModel = sequelize.define(
     },
     marca: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,  // mudou para obrigatório
       validate: {
         len: [2, 100],
+        notEmpty: true,
       },
     },
     preco: {
@@ -34,7 +35,7 @@ const ProdutosModel = sequelize.define(
     },
     quantidade_estoque: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,  // mudou para obrigatório
       validate: {
         min: 0,
       },
@@ -44,7 +45,27 @@ const ProdutosModel = sequelize.define(
       allowNull: false,
       validate: {
         len: [20, 255],
+        notEmpty: true,
       },
+    },
+    imagem_url: {
+      type: DataTypes.STRING,
+      allowNull: true,  // opcional
+      validate: {
+        isUrl: true,
+      },
+    },
+    categoria: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    ativo: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
     },
   },
   {
