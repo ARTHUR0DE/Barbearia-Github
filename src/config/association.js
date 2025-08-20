@@ -10,4 +10,4 @@ import UsuarioModel from "../modules/usuario/models/usuario.model.js";
 import VendasModel from "../modules/vendas/models/vendas.model.js";
 
 
-UsuarioModel.hasOne()
+UsuarioModel.hasMany(RelatorioModel)
